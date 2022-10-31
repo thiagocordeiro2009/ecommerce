@@ -20,6 +20,7 @@ margin-left: 8px;
 font-weight: 500;
 cursor: pointer;
 color: black;
+cursor: pointer;
 }
 
 .melhores_camisas {
@@ -50,5 +51,19 @@ color: black;
 #carrinho {
     font-size: 37px;
 }
+
+a{
+    color: white;
+    text-decoration: none;
+
+}
+
+#favoritos2 {
+    font-size: 37px;
+    width: 2em;
+}
+
+
+
 
 

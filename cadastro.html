@@ -36,17 +36,11 @@
                             <input class="cabecalhoPrincipal-pesquisa" type="text" name="pesquisa-produto" placeholder="Pesquisa">
 
                         </form>    
-                    </div>    
-                        <div class="login_houver">
-                            <i class="material-icons" style="color:black" id="login">account_circle</i>
-                            <a href="file:///C:/Development/Projetos/ecommerce/ecommerce/login.html" class="login">Entre ou Cadastre-se</a>
-
-                        </div>
 
                         <div class="favoritos">
                             
                             <a href="file:///C:/Development/Projetos/ecommerce/ecommerce/login.html">
-                                <i class="material-icons" style="color: black" id="favoritos">favorite</i>
+                                <i class="material-icons" style="color: black" id="favoritos2">favorite</i>
                             </a>                            
                             
                         </div>
@@ -58,27 +52,40 @@
                 </nav>
             </div>    
         </header>
-        <main class="cards">
-            <div class="cards_camisas">
-                <img src="img\Belgica.png" class="camisas" href="#">
-                <img src="img\a.png" class="camisas">
-                <img src="img\Argentina.png" class="camisas">
-                <img src="img\Croacia.png" class="camisas">
-                <img src="img\Estados-Unidos.png" class="camisas">
-                <img src="img\Franca.png" class="camisas">
-                <img src="img\Suica.png" class="camisas">
-                <img src="img\Polonia.png" class="camisas">
-                <img src="img\Senegal.png" class="camisas">
-                <img src="img\Japao.png" class="camisas">
-                <img src="img\Alemanha.png" class="camisas">
-                <img src="" class="camisas">
-                <img src="" class="camisas">
-                
-            </div>
-        </main>
-        <footer>
+        <div class='container-card'>
+  <div class='cadastro'>
+    <h1> Cadastrar </h1>
+        
+    <div class="containerCadastro">
+        <div class='nomeCadastro'>
+            <input type='text' id='nome' placeholder='NOME' required>
             
-        </footer>
+        </div>
+        <div class='usuarioCadastro'>
+            <input type='text' id='usuario' placeholder='USUÁRIO' required>
+            
+        </div>
+        
+        <div class='senhaCadastro'>
+        <input type='password' id='cadastro-senha' placeholder='SENHA' required>
+       
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+        <div class='confirmarsenhaCadastro'>
+            <input type='text' id='confirmSenha' placeholder='CONFIRMAR SENHA' required>
+            
+        </div>
+        
+        <div class='botaoCadastro'>
+        <button onclick='Cadastrar()' style="background-color:greenyellow">CADASTRAR</button>
+        </div>
+        
+        <div class='justify-center'>
+        </div>    
+      
+    </div>
+    
+  </div>
+  </div>
     </body>
-
-</html>   
+</html>    
