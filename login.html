@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Loja das Seleções</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/flexbox.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+    </head>
+    <body>
+        <header class="cabecalhoPrincipal">
+            <div class="info">
+                <a class="melhores_camisas" href="#">Aqui você encontra camisas das melhores seleções do mundo</a>
+                <img src="img\alemnha.png" class="bandeiras">
+                <img src="img\brasil.png" class="bandeiras">
+                <img src="img\portugal.png" class="bandeiras">
+                <img src="img\italia.png" class="bandeiras">
+                <img src="img\holanda.png" class="bandeiras">
+                <img src="img\inglaterra.png" class="bandeiras">
+                <img src="img\espanha.png" class="bandeiras">
+                <img src="img\uruguai.png" class="bandeiras">
+                
+            </div>
+            <div class="container">
+                <div class="cabecalhoPrincipal-titulo">
+                    <a href="file:///C:/Development/Projetos/ecommerce/ecommerce/index.html">
+                        <img src="img\logo.png" class="logo">
+                    </a>
+                </div>
+                <nav class="cabecalhoPrincipal-nav">
+                    <div class="pesquisa">
+                        <form autocomplete="off">
+                            <input class="cabecalhoPrincipal-pesquisa" type="text" name="pesquisa-produto" placeholder="Pesquisa">
+
+                        </form>    
+                    </div>    
+                        <div class="login_houver" >
+                            <i class="material-icons" style="color:black" id="login" >account_circle</i>
+                            <a href="file:///C:/Development/Projetos/ecommerce/ecommerce/login.html" class="login">Entre ou Cadastre-se</a>
+                            
+                        </div>
+
+                        <div class="favoritos">
+                            <a href="file:///C:/Development/Projetos/ecommerce/ecommerce/login.html">
+                                <i class="material-icons" style="color: black" id="favoritos">favorite</i>
+                            </a>  
+                        </div>
+
+                        <div class="carrinho">
+                            <i class="material-icons" style="color: black"id="carrinho">add_shopping_cart</i>
+                        </div>    
+                                                
+                </nav>
+            </div>    
+        </header>
+        <main>
+            <div class="tela_login">
+                <section class="superior">
+                    <header class="titulo_login">
+                        <h2 class="bemvindo" >Seja bem-vindo!</h2>
+                        <div id="msgError"></div>
+                    </header>
+                    <button class="cadastrar" type="button">
+                        <a href="file:///C:/Development/Projetos/ecommerce/ecommerce/cadastro.html">CADASTRE-SE</a>
+                    </button>
+                </section>
+                <section class="inferior">
+                    <div class="acao_usuario">
+                        <form class="acesso_login">
+                            <div class="campo_login">
+                                
+                                <input class="login_usuario" id="login_usuario" type="text" name="login_usuario" placeholder="E-MAIL" required>
+                            </div>
+                            <div class="campo_senha">
+                                <input class="senha" id="senha" type="password" name="password" placeholder="SENHA" required>
+                            </div>
+                            <button class="entrar">ENTRAR</button>
+                            <br>
+                            <button class="criar_conta">CRIAR CONTA</button>
+                        </form>
+                    </div>
+
+                </section>
+            </div>
+           
+                
+            
+        </main>
+       
+        <script>
+           let btn = document.querySelector('.fa-eye')
+
+                btn.addEventListener('click', ()=>{
+                let inputSenha = document.querySelector('#senha')
+                
+                if(inputSenha.getAttribute('type') == 'password'){
+                    inputSenha.setAttribute('type', 'text')
+                } else {
+                    inputSenha.setAttribute('type', 'password')
+                }
+                })
+
+                function entrar(){
+                let usuario = document.querySelector('#login_usuario')
+               
+                
+                let senha = document.querySelector('#senha')
+              
+                
+                let msgError = document.querySelector('#msgError')
+                let listaUser = []
+                
+                let userValid = {
+                    nome: '',
+                    user: '',
+                    senha: ''
+                }
+                
+                listaUser = JSON.parse(localStorage.getItem('listaUser'))
+                
+                listaUser.forEach((item) => {
+                    if(usuario.value == item.userCad && senha.value == item.senhaCad){
+                    
+                    userValid = {
+                        nome: item.nomeCad,
+                        user: item.userCad,
+                        senha: item.senhaCad
+                    }
+                    
+                    }
+                })
+                
+                if(usuario.value == userValid.user && senha.value == userValid.senha){
+                    window.location.href = 'https://cdpn.io/thicode/debug/abpVEeB/jVMpoEDNzPxk'
+                    
+                    let mathRandom = Math.random().toString(16).substr(2)
+                    let token = mathRandom + mathRandom
+                    
+                    localStorage.setItem('token', token)
+                    localStorage.setItem('userLogado', JSON.stringify(userValid))
+                } else {
+                    userLabel.setAttribute('style', 'color: red')
+                    usuario.setAttribute('style', 'border-color: red')
+                    senhaLabel.setAttribute('style', 'color: red')
+                    senha.setAttribute('style', 'border-color: red')
+                    msgError.setAttribute('style', 'display: block')
+                    msgError.innerHTML = 'Usuário ou senha incorretos'
+                    usuario.focus()
+                }
+                
+                }
+
+        </script>
+    </body>
+
+</html>   
